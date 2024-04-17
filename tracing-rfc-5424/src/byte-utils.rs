@@ -22,5 +22,6 @@ pub fn bytes_from_os_str(s: std::ffi::OsString) -> Vec<u8> {
 
 #[cfg(not(unix))]
 pub fn bytes_from_os_str(s: std::ffi::OsString) -> Vec<u8> {
-    unimplemented!("bytes_from_os_str is not supported on non-Unix.");
+    //unimplemented!("bytes_from_os_str is not supported on non-Unix.");
+    s.as_encoded_bytes().into()
 }
